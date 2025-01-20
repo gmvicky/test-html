@@ -99,10 +99,11 @@
 
                     setTimeout(function () { 
                         // window.history.replaceState(null, "", window.location.href);
-                        // const uniqueParam = `?timestamp=${Date.now()}`;
+                        const date = Date.now();
+                        const uniqueParam = `?timestamp=${date.getTime()}`;
                         // document.body.innerHTML = `${uniqueParam}`;
                         // window.location.href = "https://simplygobff.ezlink.com.sg/uma-app/ewallet/detail"; 
-                        window.location.href = 'sg.com.transitlink://'; 
+                        window.location.href = `sg.com.transitlink://uma-app/ewallet/detail/${uniqueParam}`; 
 
                         
                         //  //`sg.com.transitlink://uma-app/ewallet/detail/${uniqueParam}`;
@@ -111,9 +112,6 @@
                             
                         // }, 1000); 
                     }, 500); 
-                   
-
-                    
                 }
             }
         }; 
@@ -124,7 +122,7 @@
 
 <!-- <Text>dhdjnd</Text> -->
 <script>
-    const text = "This is a simple 9024 text block with a variable!";
+    const text = "This is a simple 9025 text block with a variable!";
     document.body.innerHTML = `${text}`;
 </script>
 </body> 
