@@ -29,7 +29,7 @@
         window.onload = function () { 
 
             const isiOS = /iPhone/i.test(navigator.userAgent); 
-            document.body.innerHTML = "NOT IOS13";
+            document.body.innerHTML = "NOT IOS14";
             if (isiOS) {
                 let referrer = document.referrer;
                 if (sessionStorage.getItem('originalReferrer')) {
@@ -81,18 +81,18 @@
                     // window.history.replaceState(null, "", window.location.href);
                    
 
-                    if (window.performance.navigation.type === 1) { 
-                        document.body.innerHTML = "1";
-                        window.location.href = "sg.com.transitlink://uma-app";
-                        window.location.reload();
-                    } else {
-                        document.body.innerHTML = "2";
-                        setTimeout(function () { 
-                        document.body.innerHTML = "3";
-                            // window.location = "https://apps.apple.com/sg/app/transitlink-simplygo/id667933103"; 
-                            window.location.href = "sg.com.transitlink://uma-app/ewallet/detail";
-                        }, 1000); 
-                    }
+                    // if (window.performance.navigation.type === 1) { 
+                    //     document.body.innerHTML = "1";
+                    //     window.location.href = "sg.com.transitlink://uma-app";
+                    //     window.location.reload();
+                    // } else {
+                    //     document.body.innerHTML = "2";
+                    //     setTimeout(function () { 
+                    //     document.body.innerHTML = "3";
+                    //         // window.location = "https://apps.apple.com/sg/app/transitlink-simplygo/id667933103"; 
+                    //         window.location.href = "sg.com.transitlink://uma-app/ewallet/detail";
+                    //     }, 1000); 
+                    // }
                     
                     // document.body.innerHTML = "2";
 
@@ -129,6 +129,16 @@
 
                     // // Append the button directly to the body
                     // document.body.appendChild(button);
+                    document.addEventListener('visibilitychange', function() {
+                        if (document.visibilityState === 'visible') {
+                            window.location.href = "sg.com.transitlink://uma-app/ewallet/detail";
+                            // console.log('Page has become visible!');
+                            // Trigger your logic when the page appears on the screen
+                            // For example, you can reload certain data or resume actions
+                        } else {
+                            // console.log('Page is not visible!');
+                        }
+                    });
                 }
             }
         }; 
