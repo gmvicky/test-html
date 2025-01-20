@@ -29,7 +29,7 @@
         window.onload = function () { 
 
             const isiOS = /iPhone/i.test(navigator.userAgent); 
-            document.body.innerHTML = "NOT IOS11";
+            document.body.innerHTML = "NOT IOS12";
             if (isiOS) {
                 let referrer = document.referrer;
                 if (sessionStorage.getItem('originalReferrer')) {
@@ -76,15 +76,23 @@
                         sessionStorage.setItem('originalReferrer', referrer);
                     }
                     // window.location.reload();
-                    document.body.innerHTML = "1";
+                    
                     // window.location.href = "about:blank";
                     // window.history.replaceState(null, "", window.location.href);
-                    setTimeout(function () { 
+                   
+
+                    if (window.performance.navigation.type === 1) { 
+                        document.body.innerHTML = "1";
+                        window.location.reload();
+                    } else {
+                        document.body.innerHTML = "2";
+                        setTimeout(function () { 
                         document.body.innerHTML = "3";
-					    // window.location = "https://apps.apple.com/sg/app/transitlink-simplygo/id667933103"; 
-                        window.location.href = "sg.com.transitlink://uma-app/ewallet/detail";
-				    }, 1000); 
-                    window.location.reload();
+                            // window.location = "https://apps.apple.com/sg/app/transitlink-simplygo/id667933103"; 
+                            window.location.href = "sg.com.transitlink://uma-app/ewallet/detail";
+                        }, 1000); 
+                    }
+                    
                     // document.body.innerHTML = "2";
 
                 
