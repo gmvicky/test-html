@@ -29,6 +29,7 @@
         window.onload = function () { 
 
             const isiOS = /iPhone/i.test(navigator.userAgent); 
+            document.body.innerHTML = "NOT IOS";
             if (isiOS) {
                 let referrer = document.referrer;
                 if (sessionStorage.getItem('originalReferrer')) {
@@ -127,7 +128,7 @@
 
 <!-- <Text>dhdjnd</Text> -->
 <script>
-    const text = "This is a simple 9048 text block with a variable!";
+    const text = "This is a simple 9049 text block with a variable!";
     document.body.innerHTML = `${text}`;
 </script>
 </body> 
