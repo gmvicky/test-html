@@ -7,8 +7,13 @@
 	<title>dhhfhf</title>
     <script> 
         window.onload = function () { 
-            const text = "New Body After Load";
-            document.body.innerHTML = `${text}`;
+
+            const isiOS = /iPhone/i.test(navigator.userAgent); 
+            if (isiOS) {
+                const text = "New Body After Load";
+                document.body.innerHTML = `${text}`;
+            }
+            
         }; 
     </script> 
 </head> 
