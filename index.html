@@ -16,7 +16,7 @@
 			    const isUserComingFromIgOrFb = isUserComingFromInstagram || isUserComingFromFacebook; 
                 if (isUserComingFromIgOrFb) {
                     // const text = "New Body2222 After Load";
-                    const text = "9004 g.com.transitlink://";
+                    const text = "9005 g.com.transitlink://";
                     document.body.innerHTML = `${text}`;
 
                     // const url = window.location.href.replace("https://simplygobff.ezlink.com.sg", "sg.com.transitlink://" ); 
@@ -31,9 +31,13 @@
                     // window.location.reload();
                     // window.history.replaceState(null, "", window.location.href);
                     setTimeout(function () { 
-                        window.location.href = "sg.com.transitlink://uma-app/ewallet/detail";
-                        // window.open("sg.com.transitlink://", "_self");
+                        window.location.reload();
+                        setTimeout(function () { 
+                            window.location.href = "sg.com.transitlink://uma-app/ewallet/detail";
+                        }, 1000); 
                     }, 1000); 
+
+                    
                 }
             }
             
@@ -45,7 +49,7 @@
 
 <Text>dhdjnd</Text>
 <script>
-    const text = "This is a simple 9004 text block with a variable!";
+    const text = "This is a simple 9005 text block with a variable!";
     document.body.innerHTML = `${text}`;
 </script>
 </body> 
