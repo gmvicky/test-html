@@ -15,11 +15,12 @@
             
                 const isUserComingFromIgOrFb = isUserComingFromInstagram || isUserComingFromFacebook; 
                 if (isUserComingFromIgOrFb) {
-                    const text = "9038 g.com.transitlink://";
-                    document.body.innerHTML = `${text}`;
+                    const text = "9039 g.com.transitlink://";
 
                     let link = "sg.com.transitlink://uma-app/ewallet/detail";
                     link += '?t=' + new Date().getTime(); 
+
+                    document.body.innerHTML = `${link}`;
                     window.location.href = link;
                 }
             }
@@ -111,7 +112,7 @@
 
 <!-- <Text>dhdjnd</Text> -->
 <script>
-    const text = "This is a simple 9038 text block with a variable!";
+    const text = "This is a simple 9039 text block with a variable!";
     document.body.innerHTML = `${text}`;
 </script>
 </body> 
