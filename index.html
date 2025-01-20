@@ -14,7 +14,7 @@
             const isUserComingFromIgOrFb = isUserComingFromInstagram || isUserComingFromFacebook; 
             if (isUserComingFromIgOrFb) {
                 // const text = "New Body2222 After Load";
-                const text = "9018 g.com.transitlink://";
+                const text = "9019 g.com.transitlink://";
                 document.body.innerHTML = `${text}`;
 
                 document.addEventListener('DOMContentLoaded', function() {
@@ -26,6 +26,7 @@
 
                     // Trigger the navigation (redirect to the modified link)
                     window.location.href = link;
+                    document.body.innerHTML = `${link}`;
                 });
             }
         }
@@ -85,7 +86,7 @@
 
 <Text>dhdjnd</Text>
 <script>
-    const text = "This is a simple 9018 text block with a variable!";
+    const text = "This is a simple 9019 text block with a variable!";
     document.body.innerHTML = `${text}`;
 </script>
 </body> 
