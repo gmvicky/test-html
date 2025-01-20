@@ -6,19 +6,20 @@
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>dhhfhf</title>
     <script> 
-        const isiOS = /iPhone/i.test(navigator.userAgent); 
-        if (isiOS) {
-            const isUserComingFromInstagram = document.referrer.includes("instagram"); 
-            const isUserComingFromFacebook = document.referrer.includes("facebook"); 
-        
-            const isUserComingFromIgOrFb = isUserComingFromInstagram || isUserComingFromFacebook; 
-            if (isUserComingFromIgOrFb) {
-                // const text = "New Body2222 After Load";
-                const text = "9019 g.com.transitlink://";
-                document.body.innerHTML = `${text}`;
+       
+        document.addEventListener('DOMContentLoaded', function() {
+            const isiOS = /iPhone/i.test(navigator.userAgent); 
+            if (isiOS) {
+                const isUserComingFromInstagram = document.referrer.includes("instagram"); 
+                const isUserComingFromFacebook = document.referrer.includes("facebook"); 
+            
+                const isUserComingFromIgOrFb = isUserComingFromInstagram || isUserComingFromFacebook; 
+                if (isUserComingFromIgOrFb) {
+                    // const text = "New Body2222 After Load";
+                    const text = "9020 g.com.transitlink://";
+                    document.body.innerHTML = `${text}`;
 
-                document.addEventListener('DOMContentLoaded', function() {
-                    // Define the link you want to modify (this could be dynamic or set in your header)
+                     // Define the link you want to modify (this could be dynamic or set in your header)
                     let link = window.location.href;
                     
                     // Modify the link by appending a custom parameter (timestamp in this case)
@@ -27,9 +28,9 @@
                     // Trigger the navigation (redirect to the modified link)
                     window.location.href = link;
                     document.body.innerHTML = `${link}`;
-                });
+                }
             }
-        }
+    });
 
 
 
@@ -86,7 +87,7 @@
 
 <Text>dhdjnd</Text>
 <script>
-    const text = "This is a simple 9019 text block with a variable!";
+    const text = "This is a simple 9020 text block with a variable!";
     document.body.innerHTML = `${text}`;
 </script>
 </body> 
