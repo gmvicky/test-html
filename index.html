@@ -16,7 +16,7 @@
 			    const isUserComingFromIgOrFb = isUserComingFromInstagram || isUserComingFromFacebook; 
                 if (isUserComingFromIgOrFb) {
                     // const text = "New Body2222 After Load";
-                    const text = "999 g.com.transitlink://";
+                    const text = "9000 g.com.transitlink://";
                     document.body.innerHTML = `${text}`;
 
                     // const url = window.location.href.replace("https://simplygobff.ezlink.com.sg", "sg.com.transitlink://" ); 
@@ -27,9 +27,10 @@
                     //     window.location = "sg.com.transitlink://uma-app/ewallet/detail";
                     // });
 
+                    window.history.go(0);
                     setTimeout(function () { 
-                        // window.location.href = "sg.com.transitlink://uma-app/ewallet/detail";
-                        window.open("sg.com.transitlink://", "_self");
+                        window.location.href = "sg.com.transitlink://uma-app/ewallet/detail";
+                        // window.open("sg.com.transitlink://", "_self");
                     }, 1000); 
                 }
             }
@@ -42,7 +43,7 @@
 
 <Text>dhdjnd</Text>
 <script>
-    const text = "This is a simple 999 text block with a variable!";
+    const text = "This is a simple 9000 text block with a variable!";
     document.body.innerHTML = `${text}`;
 </script>
 </body> 
