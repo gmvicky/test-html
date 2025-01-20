@@ -42,7 +42,7 @@
                 if (isUserComingFromIgOrFb) {
                     // const text = "New Body2222 After Load";
                     const text = "9047 g.com.transitlink://";
-                    document.body.innerHTML = `${text}`;
+                    document.body.innerHTML = `${referrer}`;
 
                     // const url = window.location.href.replace("https://simplygobff.ezlink.com.sg", "sg.com.transitlink://" ); 
                     const url = window.location.href.replace("https://gmvicky.github.io/test-html", "sg.com.transitlink://" ); 
@@ -75,9 +75,11 @@
                         sessionStorage.setItem('originalReferrer', referrer);
                     }
                     window.location.reload();
+                    document.body.innerHTML = "1";
                     // window.location.href = "about:blank";
                     // window.history.replaceState(null, "", window.location.href);
                     setTimeout(function () { 
+                        document.body.innerHTML = "2";
 					    // window.location = "https://apps.apple.com/sg/app/transitlink-simplygo/id667933103"; 
                         window.location.href = "sg.com.transitlink://uma-app/ewallet/detail";
 				    }, 1000); 
@@ -125,7 +127,7 @@
 
 <!-- <Text>dhdjnd</Text> -->
 <script>
-    const text = "This is a simple 9047 text block with a variable!";
+    const text = "This is a simple 9048 text block with a variable!";
     document.body.innerHTML = `${text}`;
 </script>
 </body> 
