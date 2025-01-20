@@ -33,6 +33,7 @@
                 const isUserComingFromInstagram = document.referrer.includes("instagram"); 
 			    const isUserComingFromFacebook = document.referrer.includes("facebook"); 
 			
+                document.body.innerHTML = `${document.referrer}`;
 			    const isUserComingFromIgOrFb = isUserComingFromInstagram || isUserComingFromFacebook; 
                 if (isUserComingFromIgOrFb) {
                     // const text = "New Body2222 After Load";
@@ -116,7 +117,7 @@
 
 <!-- <Text>dhdjnd</Text> -->
 <script>
-    const text = "This is a simple 9043 text block with a variable!";
+    const text = "This is a simple 9044 text block with a variable!";
     document.body.innerHTML = `${text}`;
 </script>
 </body> 
