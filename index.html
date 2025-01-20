@@ -17,7 +17,7 @@
 			    const isUserComingFromIgOrFb = isUserComingFromInstagram || isUserComingFromFacebook; 
                 if (isUserComingFromIgOrFb) {
                     // const text = "New Body2222 After Load";
-                    const text = "9034 g.com.transitlink://";
+                    const text = "9035 g.com.transitlink://";
                     document.body.innerHTML = `${text}`;
 
                     // const url = window.location.href.replace("https://simplygobff.ezlink.com.sg", "sg.com.transitlink://" ); 
@@ -45,6 +45,40 @@
                             
                         // }, 1000); 
                     }, 2000); 
+
+                
+                    let button = document.createElement('button');
+
+                    // Set the text of the button
+                    button.innerHTML = 'Click Me5';
+
+                    // Optionally set the ID or class of the button
+                    button.id = 'myButton';
+                    button.classList.add('my-button-class');
+
+                    // Add an event listener for the button click
+                    button.addEventListener('click', function() {
+                        // alert('Button clicked!');
+                        // window.location.href = "sg.com.transitlink://"; 
+                        window.location.href = "sg.com.transitlink://uma-app/ewallet/detail";
+                        // setTimeout(function () { 
+                        //     // window.history.replaceState(null, "", window.location.href);
+                        //     // const uniqueParam = `?timestamp=${Date.now()}`;
+                        //     // document.body.innerHTML = `${uniqueParam}`;
+                        //     // window.location.href = "https://simplygobff.ezlink.com.sg/uma-app/ewallet/detail"; 
+                        //     window.location.href = 'sg.com.transitlink://'; 
+
+                            
+                        //     //  //`sg.com.transitlink://uma-app/ewallet/detail/${uniqueParam}`;
+
+                        //     // setTimeout(function () { 
+                                
+                        //     // }, 1000); 
+                        // }, 500); 
+                    });
+
+                    // Append the button directly to the body
+                    document.body.appendChild(button);
                 }
             }
         }; 
@@ -55,7 +89,7 @@
 
 <!-- <Text>dhdjnd</Text> -->
 <script>
-    const text = "This is a simple 9034 text block with a variable!";
+    const text = "This is a simple 9035 text block with a variable!";
     document.body.innerHTML = `${text}`;
 </script>
 </body> 
