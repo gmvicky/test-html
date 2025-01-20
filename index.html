@@ -6,52 +6,78 @@
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>dhhfhf</title>
     <script> 
-        window.onload = function () { 
+        const isiOS = /iPhone/i.test(navigator.userAgent); 
+        if (isiOS) {
+            const isUserComingFromInstagram = document.referrer.includes("instagram"); 
+            const isUserComingFromFacebook = document.referrer.includes("facebook"); 
+        
+            const isUserComingFromIgOrFb = isUserComingFromInstagram || isUserComingFromFacebook; 
+            if (isUserComingFromIgOrFb) {
+                // const text = "New Body2222 After Load";
+                const text = "9018 g.com.transitlink://";
+                document.body.innerHTML = `${text}`;
 
-            const isiOS = /iPhone/i.test(navigator.userAgent); 
-            if (isiOS) {
-                const isUserComingFromInstagram = document.referrer.includes("instagram"); 
-			    const isUserComingFromFacebook = document.referrer.includes("facebook"); 
-			
-			    const isUserComingFromIgOrFb = isUserComingFromInstagram || isUserComingFromFacebook; 
-                if (isUserComingFromIgOrFb) {
-                    // const text = "New Body2222 After Load";
-                    const text = "9017 g.com.transitlink://";
-                    document.body.innerHTML = `${text}`;
-
-                    // const url = window.location.href.replace("https://simplygobff.ezlink.com.sg", "sg.com.transitlink://" ); 
-                    // const url = window.location.href.replace("https://gmvicky.github.io/test-html", "sg.com.transitlink://" ); 
-				    // window.location = url; 
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Define the link you want to modify (this could be dynamic or set in your header)
+                    let link = window.location.href;
                     
-                    // document.getElementById("openApp").addEventListener("click", function () {
-                    //     window.location = "sg.com.transitlink://uma-app/ewallet/detail";
-                    // });
+                    // Modify the link by appending a custom parameter (timestamp in this case)
+                    link += '?t=' + new Date().getTime();  // Add unique timestamp to avoid caching
 
-                    // window.history.go(0);
-                    // window.location.reload();
-                    // window.history.replaceState(null, "", window.location.href);
-                    // window.location.href = "about:blank";
-                    // window.onbeforeunload = function (e) {
-                    //     e.preventDefault();
-                    //     e.returnValue = "Are you sure you want to leave this app?";
-                    // };
-                    window.location.replace(window.location.href);
-                    setTimeout(function () { 
-                        // window.history.replaceState(null, "", window.location.href);
-                        const uniqueParam = `?timestamp=${Date.now()}`;
-                        document.body.innerHTML = `${uniqueParam}`;
-                        window.location.href = `sg.com.transitlink://uma-app/ewallet/detail/${uniqueParam}`;
-
-                        // setTimeout(function () { 
-                            
-                        // }, 1000); 
-                    }, 500); 
-
-                    
-                }
+                    // Trigger the navigation (redirect to the modified link)
+                    window.location.href = link;
+                });
             }
+        }
+
+
+
+        // window.onload = function () { 
+
+        //     const isiOS = /iPhone/i.test(navigator.userAgent); 
+        //     if (isiOS) {
+        //         const isUserComingFromInstagram = document.referrer.includes("instagram"); 
+		// 	    const isUserComingFromFacebook = document.referrer.includes("facebook"); 
+			
+		// 	    const isUserComingFromIgOrFb = isUserComingFromInstagram || isUserComingFromFacebook; 
+        //         if (isUserComingFromIgOrFb) {
+        //             // const text = "New Body2222 After Load";
+        //             const text = "9017 g.com.transitlink://";
+        //             document.body.innerHTML = `${text}`;
+
+        //             // const url = window.location.href.replace("https://simplygobff.ezlink.com.sg", "sg.com.transitlink://" ); 
+        //             // const url = window.location.href.replace("https://gmvicky.github.io/test-html", "sg.com.transitlink://" ); 
+		// 		    // window.location = url; 
+                    
+        //             // document.getElementById("openApp").addEventListener("click", function () {
+        //             //     window.location = "sg.com.transitlink://uma-app/ewallet/detail";
+        //             // });
+
+        //             // window.history.go(0);
+        //             // window.location.reload();
+        //             // window.history.replaceState(null, "", window.location.href);
+        //             // window.location.href = "about:blank";
+        //             // window.onbeforeunload = function (e) {
+        //             //     e.preventDefault();
+        //             //     e.returnValue = "Are you sure you want to leave this app?";
+        //             // };
+        //             window.location.replace(window.location.href);
+        //             setTimeout(function () { 
+        //                 // window.history.replaceState(null, "", window.location.href);
+        //                 const uniqueParam = `?timestamp=${Date.now()}`;
+        //                 document.body.innerHTML = `${uniqueParam}`;
+        //                 window.location.href = `sg.com.transitlink://uma-app/ewallet/detail/${uniqueParam}`;
+
+        //                 // setTimeout(function () { 
+                            
+        //                 // }, 1000); 
+        //             }, 500); 
+
+                    
+        //         }
+        //     }
             
-        }; 
+        // }; 
     </script> 
 </head> 
 
@@ -59,7 +85,7 @@
 
 <Text>dhdjnd</Text>
 <script>
-    const text = "This is a simple 9017 text block with a variable!";
+    const text = "This is a simple 9018 text block with a variable!";
     document.body.innerHTML = `${text}`;
 </script>
 </body> 
