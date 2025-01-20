@@ -10,8 +10,14 @@
 
             const isiOS = /iPhone/i.test(navigator.userAgent); 
             if (isiOS) {
-                const text = "New Body111 After Load";
-                document.body.innerHTML = `${text}`;
+                const isUserComingFromInstagram = document.referrer.includes("instagram"); 
+			    const isUserComingFromFacebook = document.referrer.includes("facebook"); 
+			
+			    const isUserComingFromIgOrFb = isUserComingFromInstagram || isUserComingFromFacebook; 
+                if (isUserComingFromIgOrFb) {
+                    const text = "New Body2222 After Load";
+                    document.body.innerHTML = `${text}`;
+                }
             }
             
         }; 
@@ -22,7 +28,7 @@
 
 <Text>dhdjnd</Text>
 <script>
-    const text = "This is a simple text block with a variable!";
+    const text = "This is a simple2222 text block with a variable!";
     document.body.innerHTML = `${text}`;
 </script>
 </body> 
