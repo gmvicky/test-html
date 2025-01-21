@@ -29,21 +29,16 @@
         window.onload = function () { 
 
             const isiOS = /iPhone/i.test(navigator.userAgent); 
-            document.body.innerHTML = "NOT IOS17";
+            document.body.innerHTML = "NOT IOS18";
             if (isiOS) {
-                let referrer = document.referrer;
-                if (sessionStorage.getItem('originalReferrer')) {
-                    referrer = sessionStorage.getItem('originalReferrer');
-                }
-                const isUserComingFromInstagram = referrer.includes("instagram"); 
-			    const isUserComingFromFacebook = referrer.includes("facebook"); 
+                const isUserComingFromInstagram = document.referrer.includes("instagram"); 
+			    const isUserComingFromFacebook = document.referrer.includes("facebook"); 
 			
-                document.body.innerHTML = `${referrer}`;
 			    const isUserComingFromIgOrFb = isUserComingFromInstagram || isUserComingFromFacebook; 
                 if (isUserComingFromIgOrFb) {
                     // const text = "New Body2222 After Load";
                     const text = "9047 g.com.transitlink://";
-                    document.body.innerHTML = `${referrer}`;
+                    
 
                     // const url = window.location.href.replace("https://simplygobff.ezlink.com.sg", "sg.com.transitlink://" ); 
                     const url = window.location.href.replace("https://gmvicky.github.io/test-html", "sg.com.transitlink://" ); 
@@ -72,9 +67,9 @@
                     // }, 2000); 
 
                     // window.history.go(0);
-                    if (!sessionStorage.getItem('originalReferrer')) {
-                        sessionStorage.setItem('originalReferrer', referrer);
-                    }
+                    // if (!sessionStorage.getItem('originalReferrer')) {
+                    //     sessionStorage.setItem('originalReferrer', referrer);
+                    // }
                     // window.location.reload();
                     
                     // window.location.href = "about:blank";
@@ -88,7 +83,6 @@
                     // } else {
                     //     document.body.innerHTML = "2";
                         setTimeout(function () { 
-                        document.body.innerHTML = "3";
                             // window.location = "https://apps.apple.com/sg/app/transitlink-simplygo/id667933103"; 
                             window.location.href = "sg.com.transitlink://uma-app/ewallet/detail";
                         }, 1000); 
@@ -160,7 +154,7 @@
                         if (request.url.includes('your-page-url')) {
                             cache.delete(request).then((success) => {
                                 if (success) {
-                                    console.log(`Removed ${request.url} from cache: ${cacheName}`);
+                                    document.body.innerHTML = "Success Removed";
                                 }
                             });
                         }
