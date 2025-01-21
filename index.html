@@ -17,15 +17,15 @@
 			    const isUserComingFromIgOrFb = isUserComingFromInstagram || isUserComingFromFacebook; 
                 if (isUserComingFromIgOrFb) {
                  
+                    const url = window.location.href.replace("https://gmvicky.github.io/test-html/", "sg.com.transitlink://" ); 
                      setTimeout(function () { 
                        
-                        window.location.href = "sg.com.transitlink://uma-app/ewallet/detail";
+                        window.location.href = url;
                     }, 1000); 
                 
                     document.addEventListener('visibilitychange', function() {
                         if (document.visibilityState === 'visible') {
-                            // const url = window.location.href.replace("https://gmvicky.github.io/test-html/", "sg.com.transitlink://" ); 
-                            window.location.href = "sg.com.transitlink://uma-app/ewallet/detail";
+                            window.location.href = url;
                         } 
                     });
                 }
@@ -38,7 +38,7 @@
 
 <!-- <Text>dhdjnd</Text> -->
 <script>
-    const text = "This is a simple 9053 text block with a variable!";
+    const text = "This is a simple 9054 text block with a variable!";
     document.body.innerHTML = `${text}`;
 </script>
 </body> 
