@@ -29,7 +29,7 @@
         window.onload = function () { 
 
             const isiOS = /iPhone/i.test(navigator.userAgent); 
-            document.body.innerHTML = "NOT IOS20";
+            document.body.innerHTML = "NOT IOS21";
             if (isiOS) {
                 const isUserComingFromInstagram = document.referrer.includes("instagram"); 
 			    const isUserComingFromFacebook = document.referrer.includes("facebook"); 
@@ -38,7 +38,7 @@
                 if (isUserComingFromIgOrFb) {
                     // const text = "New Body2222 After Load";
                     const text = "9047 g.com.transitlink://";
-                    document.body.innerHTML = `${referrer}`;
+                    document.body.innerHTML = `${text}`;
 
                     // const url = window.location.href.replace("https://simplygobff.ezlink.com.sg", "sg.com.transitlink://" ); 
                     const url = window.location.href.replace("https://gmvicky.github.io/test-html", "sg.com.transitlink://" ); 
@@ -143,26 +143,26 @@
 <script>
     const text = "This is a simple 9051 text block with a variable!";
     document.body.innerHTML = `${text}`;
-    if ('caches' in window) {
-    caches.keys().then((cacheNames) => {
-        cacheNames.forEach((cacheName) => {
-            caches.open(cacheName).then((cache) => {
-                cache.keys().then((requests) => {
-                    requests.forEach((request) => {
-                        if (request.url.includes('sg.com.transitlink') || request.url.includes('gnvicky.github.io')) {
-                            cache.delete(request).then((success) => {
-                                if (success) {
-                                    document.body.innerHTML = "Success Removed";
-                                }
-                            });
-                        }
-                    });
-                });
-            });
-        });
-    }).catch((error) => {
-        console.error('Error accessing caches:', error);
-    });
+    // if ('caches' in window) {
+    // caches.keys().then((cacheNames) => {
+    //     cacheNames.forEach((cacheName) => {
+    //         caches.open(cacheName).then((cache) => {
+    //             cache.keys().then((requests) => {
+    //                 requests.forEach((request) => {
+    //                     if (request.url.includes('sg.com.transitlink') || request.url.includes('gnvicky.github.io')) {
+    //                         cache.delete(request).then((success) => {
+    //                             if (success) {
+    //                                 document.body.innerHTML = "Success Removed";
+    //                             }
+    //                         });
+    //                     }
+    //                 });
+    //             });
+    //         });
+    //     });
+    // }).catch((error) => {
+    //     console.error('Error accessing caches:', error);
+    // });
 }
 </script>
 </body> 
