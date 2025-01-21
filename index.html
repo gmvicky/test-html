@@ -29,7 +29,7 @@
         window.onload = function () { 
 
             const isiOS = /iPhone/i.test(navigator.userAgent); 
-            document.body.innerHTML = "NOT IOS22";
+            document.body.innerHTML = "NOT IOS23";
             if (isiOS) {
                 const isUserComingFromInstagram = document.referrer.includes("instagram"); 
 			    const isUserComingFromFacebook = document.referrer.includes("facebook"); 
@@ -37,7 +37,7 @@
 			    const isUserComingFromIgOrFb = isUserComingFromInstagram || isUserComingFromFacebook; 
                 if (isUserComingFromIgOrFb) {
                     // const text = "New Body2222 After Load";
-                    const text = "9047 g.com.transitlink://";
+                    const text = "9048 g.com.transitlink://";
                     document.body.innerHTML = `${text}`;
 
                     // const url = window.location.href.replace("https://simplygobff.ezlink.com.sg", "sg.com.transitlink://" ); 
@@ -83,6 +83,27 @@
                         setTimeout(function () { 
                             // window.location = "https://apps.apple.com/sg/app/transitlink-simplygo/id667933103"; 
                             window.location.href = "sg.com.transitlink://uma-app/ewallet/detail";
+                            if ('caches' in window) {
+                                caches.keys().then((cacheNames) => {
+                                    cacheNames.forEach((cacheName) => {
+                                        caches.open(cacheName).then((cache) => {
+                                            cache.keys().then((requests) => {
+                                                requests.forEach((request) => {
+                                                    if (request.url.includes('sg.com.transitlink') || request.url.includes('gnvicky.github.io')) {
+                                                        cache.delete(request).then((success) => {
+                                                            if (success) {
+                                                                document.body.innerHTML = "Success Removed";
+                                                            }
+                                                        });
+                                                    }
+                                                });
+                                            });
+                                        });
+                                    });
+                                }).catch((error) => {
+                                    console.error('Error accessing caches:', error);
+                                });
+                            }
                         }, 1000); 
                     // }
                     
@@ -143,27 +164,6 @@
 <script>
     const text = "This is a simple 9051 text block with a variable!";
     document.body.innerHTML = `${text}`;
-    if ('caches' in window) {
-    caches.keys().then((cacheNames) => {
-        cacheNames.forEach((cacheName) => {
-            caches.open(cacheName).then((cache) => {
-                cache.keys().then((requests) => {
-                    requests.forEach((request) => {
-                        if (request.url.includes('sg.com.transitlink') || request.url.includes('gnvicky.github.io')) {
-                            cache.delete(request).then((success) => {
-                                if (success) {
-                                    document.body.innerHTML = "Success Removed";
-                                }
-                            });
-                        }
-                    });
-                });
-            });
-        });
-    }).catch((error) => {
-        console.error('Error accessing caches:', error);
-    });
-}
 </script>
 </body> 
 
