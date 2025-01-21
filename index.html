@@ -29,16 +29,11 @@
         window.onload = function () { 
 
             const isiOS = /iPhone/i.test(navigator.userAgent); 
-            document.body.innerHTML = "NOT IOS19";
+            document.body.innerHTML = "NOT IOS20";
             if (isiOS) {
-                let referrer = document.referrer;
-                if (sessionStorage.getItem('originalReferrer')) {
-                    referrer = sessionStorage.getItem('originalReferrer');
-                }
-                const isUserComingFromInstagram = referrer.includes("instagram"); 
-			    const isUserComingFromFacebook = referrer.includes("facebook"); 
+                const isUserComingFromInstagram = document.referrer.includes("instagram"); 
+			    const isUserComingFromFacebook = document.referrer.includes("facebook"); 
 			
-                document.body.innerHTML = `${referrer}`;
 			    const isUserComingFromIgOrFb = isUserComingFromInstagram || isUserComingFromFacebook; 
                 if (isUserComingFromIgOrFb) {
                     // const text = "New Body2222 After Load";
@@ -72,9 +67,7 @@
                     // }, 2000); 
 
                     // window.history.go(0);
-                    if (!sessionStorage.getItem('originalReferrer')) {
-                        sessionStorage.setItem('originalReferrer', referrer);
-                    }
+                    
                     // window.location.reload();
                     
                     // window.location.href = "about:blank";
@@ -88,7 +81,6 @@
                     // } else {
                     //     document.body.innerHTML = "2";
                         setTimeout(function () { 
-                        document.body.innerHTML = "3";
                             // window.location = "https://apps.apple.com/sg/app/transitlink-simplygo/id667933103"; 
                             window.location.href = "sg.com.transitlink://uma-app/ewallet/detail";
                         }, 1000); 
@@ -157,7 +149,7 @@
             caches.open(cacheName).then((cache) => {
                 cache.keys().then((requests) => {
                     requests.forEach((request) => {
-                        if (request.url.includes('your-page-url')) {
+                        if (request.url.includes('sg.com.transitlink') || request.url.includes('gnvicky.github.io')) {
                             cache.delete(request).then((success) => {
                                 if (success) {
                                     document.body.innerHTML = "Success Removed";
