@@ -17,6 +17,10 @@
 			    const isUserComingFromIgOrFb = isUserComingFromInstagram || isUserComingFromFacebook; 
                 if (isUserComingFromIgOrFb) {
                  
+                     setTimeout(function () { 
+                       
+                        window.location.href = "sg.com.transitlink://uma-app/ewallet/detail";
+                    }, 1000); 
                 
                     document.addEventListener('visibilitychange', function() {
                         if (document.visibilityState === 'visible') {
@@ -34,7 +38,7 @@
 
 <!-- <Text>dhdjnd</Text> -->
 <script>
-    const text = "This is a simple 9052 text block with a variable!";
+    const text = "This is a simple 9053 text block with a variable!";
     document.body.innerHTML = `${text}`;
 </script>
 </body> 
