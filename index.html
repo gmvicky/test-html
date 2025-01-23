@@ -41,15 +41,19 @@
 const fullUrl = window.location.href;
 const urlObj = new URL(fullUrl);
 
- const aText = `${urlObj.protocol}`;
+//  const aText = `${urlObj.protocol}`;
+ const aText = `${urlObj.protocol}//${urlObj.hostname}/`;
  const textElement = document.createElement('Text');
 textElement.textContent = aText;
 document.body.appendChild(textElement);
 
-const aText2 = `${urlObj.hostname}`;
- const textElement2 = document.createElement('Text');
- textElement2.textContent = aText2;
-document.body.appendChild(textElement2);
+// const aText2 = `${urlObj.hostname}`;
+//  const textElement2 = document.createElement('Text');
+//  textElement2.textContent = aText2;
+// document.body.appendChild(textElement2);
+
+// const fullBase = `${urlObj.protocol}//${urlObj.hostname}/`;
+
 </script> 
 </body> 
 
