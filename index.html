@@ -17,17 +17,19 @@
 			    const isUserComingFromIgOrFb = isUserComingFromInstagram || isUserComingFromFacebook; 
                 if (isUserComingFromIgOrFb) {
                  
-                    const url = window.location.href.replace("https://gmvicky.github.io/test-html/", "sg.com.transitlink://uma-app/ewallet/detail" ); 
-                     setTimeout(function () { 
+                    // const baseDomain = "https://uat.simplygo.com.sg";
+                    // const url = window.location.href.replace(baseDomain, "sg.com.transitlink://" );
+
+                    //  setTimeout(function () { 
                        
-                        window.location.href = url;
-                    }, 1000); 
+                    //     window.location.href = url;
+                    // }, 1000); 
                 
-                    document.addEventListener('visibilitychange', function() {
-                        if (document.visibilityState === 'visible') {
-                            window.location.href = url;
-                        } 
-                    });
+                    // document.addEventListener('visibilitychange', function() {
+                    //     if (document.visibilityState === 'visible') {
+                    //         window.location.href = url;
+                    //     } 
+                    // });
                 }
             }
         }; 
@@ -35,12 +37,20 @@
 </head> 
 
 <body> 
+ <script> 
+const fullUrl = window.location.href;
+const urlObj = new URL(fullUrl);
 
-<!-- <Text>dhdjnd</Text> -->
-<script>
-    const text = "This is a simple 9055 text block with a variable!";
-    document.body.innerHTML = `${text}`;
-</script>
+ const aText = `${urlObj.protocol}`;
+ const textElement = document.createElement('Text');
+textElement.textContent = aText;
+document.body.appendChild(textElement);
+
+const aText2 = `${urlObj.hostname}`;
+ const textElement2 = document.createElement('Text');
+ textElement2.textContent = aText2;
+document.body.appendChild(textElement2);
+</script> 
 </body> 
 
 </html> 
