@@ -15,7 +15,7 @@
 			    const isUserComingFromFacebook = document.referrer.includes("facebook"); 
 			
 			    const isUserComingFromIgOrFb = isUserComingFromInstagram || isUserComingFromFacebook; 
-                if (isUserComingFromIgOrFb) {
+                // if (isUserComingFromIgOrFb) {
                  
                     const urlObj = new URL(window.location.href);
                     const fullHost = `${urlObj.protocol}//${urlObj.hostname}/`;
@@ -34,7 +34,7 @@
                             window.location.href = url;
                         } 
                     });
-                }
+                // }
             }
         }; 
     </script> 
