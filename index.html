@@ -25,7 +25,7 @@
 
                     const params = new URLSearchParams(window.location.search);
                     const deeplinkPath = params.get("deeplink-path") || "";
-                    const url = window.location.href.replace(fullHost, "sg.com.transitlink://" ) + deeplinkPath;
+                    const url =  "sg.com.transitlink://" + deeplinkPath;
 
                      setTimeout(function () { 
                        
