@@ -9,20 +9,23 @@
 
         window.onload = function () { 
 
-            const isiOS = /iPhone/i.test(navigator.userAgent); 
-            if (isiOS) {
+            const isAndroidPhone = /android.*mobile/i.test(navigator.userAgent);
+            const isiOSPhone = /iPhone/i.test(navigator.userAgent);
+            const isMobilePhone = isAndroidPhone || isiOSPhone
+
+            if (isMobilePhone) {
                 const isUserComingFromInstagram = document.referrer.includes("instagram"); 
 			    const isUserComingFromFacebook = document.referrer.includes("facebook"); 
 			
 			    const isUserComingFromIgOrFb = isUserComingFromInstagram || isUserComingFromFacebook; 
-                // if (isUserComingFromIgOrFb) {
+                if (isUserComingFromIgOrFb) {
                  
                     const urlObj = new URL(window.location.href);
                     const fullHost = `${urlObj.protocol}//${urlObj.hostname}/`;
 
-                    //sg.com.transitlink://
-                    //https://uat.simplygo.com.sg/
-                    const url = window.location.href.replace(fullHost, "sg.com.transitlink://" );
+                    const params = new URLSearchParams(window.location.search);
+                    const deeplinkPath = params.get("deeplink-path") || "";
+                    const url = window.location.href.replace(fullHost, "sg.com.transitlink://" ) + deeplinkPath;
 
                      setTimeout(function () { 
                        
@@ -34,7 +37,7 @@
                             window.location.href = url;
                         } 
                     });
-                // }
+                }
             }
         }; 
     </script> 
