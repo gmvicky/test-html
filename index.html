@@ -21,11 +21,12 @@
                 if (isUserComingFromIgOrFb) {
                  
                     const urlObj = new URL(window.location.href);
-                    const fullHost = `${urlObj.protocol}//${urlObj.hostname}/`;
-
+                    
                     const params = new URLSearchParams(window.location.search);
                     const deeplinkPath = params.get("deeplink-path") || "";
-                    const url =  "sg.com.transitlink://" + deeplinkPath;
+
+                    const urlScheme = isAndroidPhone ? "intent://sg.com.transitlink://" : "sg.com.transitlink://"
+                    const url = urlScheme + `${urlObj.hostname}/` + deeplinkPath;
 
                      setTimeout(function () { 
                        
