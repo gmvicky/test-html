@@ -14,31 +14,33 @@
             const isMobilePhone = isAndroidPhone || isiOSPhone
 
             if (isMobilePhone) {
-                const isUserComingFromInstagram = document.referrer.includes("instagram"); 
-			    const isUserComingFromFacebook = document.referrer.includes("facebook"); 
+                // const isUserComingFromInstagram = document.referrer.includes("instagram"); 
+			    // const isUserComingFromFacebook = document.referrer.includes("facebook"); 
 			
-			    const isUserComingFromIgOrFb = isUserComingFromInstagram || isUserComingFromFacebook; 
-                if (isUserComingFromIgOrFb) {
+			    // const isUserComingFromIgOrFb = isUserComingFromInstagram || isUserComingFromFacebook; 
+                // if (isUserComingFromIgOrFb) {
                  
-                    const urlObj = new URL(window.location.href);
-                    
-                    const params = new URLSearchParams(window.location.search);
-                    const deeplinkPath = params.get("deeplink-path") || "";
+                //     const urlObj = new URL(window.location.href);
+                //     const params = new URLSearchParams(window.location.search);
+                //     const deeplinkPath = params.get("deeplink-path") || "";
 
-                    const urlScheme = isAndroidPhone ? "intent://sg.com.transitlink://" : "sg.com.transitlink://"
-                    const url = urlScheme + `${urlObj.hostname}/` + deeplinkPath;
+                //     const urlScheme = isAndroidPhone ? "intent://sg.com.transitlink://" : "sg.com.transitlink://"
+                //     const url = urlScheme + `${urlObj.hostname}/` + deeplinkPath;
 
-                     setTimeout(function () { 
+                //      setTimeout(function () { 
                        
-                        window.location.href = url;
-                    }, 1000); 
+                //         window.location.href = url;
+                //     }, 1000); 
                 
-                    document.addEventListener('visibilitychange', function() {
-                        if (document.visibilityState === 'visible') {
-                            window.location.href = url;
-                        } 
-                    });
-                }
+                //     document.addEventListener('visibilitychange', function() {
+                //         if (document.visibilityState === 'visible') {
+                //             window.location.href = url;
+                //         } 
+                //     });
+                // }
+
+                const urlScheme = "sg.com.transitlink://";
+                window.location.href = urlScheme;
             }
         }; 
     </script> 
