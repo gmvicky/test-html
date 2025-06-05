@@ -39,11 +39,24 @@
                 //     });
                 // }
 
+
+                 let appLikelyOpened = false;
+                 document.addEventListener("visibilitychange", () => {
+                if (document.visibilityState === "hidden") {
+                    appLikelyOpened = true;
+                    console.log("Page hidden — app probably opened.");
+                }
+                });
+
                 const urlScheme = "sg.com.transitlink://";
                 window.location.href = urlScheme;
+
+                // Fallback if not opened
                 setTimeout(() => {
-                     window.location.href = "https://apps.apple.com/sg/app/transitlink-simplygo/id667933103";
-                }, 1500); //
+                if (!appLikelyOpened) {
+                    window.location.href = "https://apps.apple.com/sg/app/transitlink-simplygo/id667933103";
+                }
+                }, 1500);
                 
             }
         }; 
