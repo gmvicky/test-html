@@ -1,8 +1,58 @@
-<!DOCTYPE html> 
-<html lang="en"> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Two Buttons Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            gap: 20px;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #label {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="label">Tapped: 0</div>
+
+    <button onclick="incrementCounter()">Tap Me</button>
+
+    <button onclick="goToUrl()">Go to Website</button>
+
+    <script>
+        let count = 0;
+
+        function incrementCounter() {
+            count++;
+            document.getElementById("label").innerText = "Tapped: " + count;
+        }
+
+        function goToUrl() {
+            window.location.href = "sg.com.transitlink://simplygobff.ezlink.com.sg/uma-app/add-card/home"; //"https://www.example.com";
+        }
+    </script>
+
+</body>
+</html>
+
 
  
-<head> 
+<!-- <head> 
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>dhhfhf</title>
     <script> 
@@ -68,4 +118,4 @@
 <Text></Text>
 </body> 
 
-</html> 
+</html>  -->
