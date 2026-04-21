@@ -38,12 +38,59 @@
       background: #0056b3;
     }
   </style>
+      <script> 
+
+        window.onload = function () { 
+
+            const isAndroidPhone = /android.*mobile/i.test(navigator.userAgent);
+            const isiOSPhone = /iPhone/i.test(navigator.userAgent);
+            const isMobilePhone = isAndroidPhone || isiOSPhone
+
+            if (isMobilePhone) {
+
+              const inputUrl = "https://simplygo.com.sg/simplygo-app?deeplink-path=uma-app/travel-guide/bus-stop&code=15051&utm_source=test&utm_medium=test&utm_campaign=testmel";
+              const urlObj = new URL(inputUrl);
+
+                // const params = new URLSearchParams(window.location.search);
+                const params = new URLSearchParams(urlObj.search);
+                const deeplinkPath = params.get("deeplink-path") || ""; ////
+
+                if (deeplinkPath.length > 0) {
+                    const urlObj = new URL(window.location.href);
+                    const urlScheme = "sg.com.transitlink://"
+
+                    // 4. Remove the deeplink-path so it doesn't double up
+                    params.delete("deeplink-path");
+
+                    // 5. Build the query string from remaining params
+                    const remainingParams = params.toString();
+                    const queryString = remainingParams ? `?${remainingParams}` : "";
+
+                    // 6. Reconstruct the final deep link
+                    const url = urlScheme + `${urlObj.hostname}/` + deeplinkPath + queryString;
+
+                    // const url = urlScheme + `${urlObj.hostname}/` + deeplinkPath;
+
+                      setTimeout(function () { 
+                        
+                        window.location.href = url;
+                    }, 1000); 
+                
+                    document.addEventListener('visibilitychange', function() {
+                        if (document.visibilityState === 'visible') {
+                            window.location.href = url;
+                        } 
+                    });
+                }
+            }
+        }; 
+    </script> 
 </head>
 
 <body>
   <div class="container">
     <a
-      href="sg.com.transitlink://simplygobff.ezlink.com.sg/uma-app/ewallet/detail"
+      href="sg.com.transitlink://simplygobff.ezlink.com.sg/uma-app/ewallet/detail111"
       class="open-app-btn"
     >
       Open in App1
